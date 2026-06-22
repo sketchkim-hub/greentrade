@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenTrade | 중국·해외 기계 수입 전문</title>
+<meta name="description" content="GreenTrade - 중국 및 해외 기계·산업설비·잡화 수입 전문. 시장조사부터 통관, 납품까지 원스톱 서비스.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1a6b3c;
+  --green-dark: #0f4526;
+  --green-light: #2d9155;
+  --green-pale: #e8f5ee;
+  --gold: #c8a84b;
+  --gold-light: #e8c96a;
+  --dark: #0e1a14;
+  --gray: #5a6b61;
+  --gray-light: #f0f5f2;
+  --white: #ffffff;
+  --border: rgba(26,107,60,0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(14,26,20,0.96);
+  backdrop-filter: blur(12px);
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  border-bottom: 1px solid rgba(200,168,75,0.2);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--gold);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo-icon svg { width: 22px; height: 22px; }
+
+.nav-logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+
+.nav-logo-sub {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--dark) !important;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--dark) !important; }
+
+/* HERO */
+#hero {
+  min-height: 100vh;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 5% 60px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,107,60,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(200,168,75,0.08) 0%, transparent 60%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26,107,60,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,107,60,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200,168,75,0.12);
+  border: 1px solid rgba(200,168,75,0.3);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 8vw, 88px);
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.hero-title span {
+  color: var(--gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.hero-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 40px;
+  max-width: 520px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.hero-right {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 2;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(200,168,75,0.15);
+  border-radius: 12px;
+  padding: 20px 24px;
+  width: 220px;
+  transition: border-color 0.2s;
+}
+
+.hero-card:hover { border-color: rgba(200,168,75,0.4); }
+
+.hero-card-icon {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.hero-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.hero-card-text {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+
+/* SECTION BASE */
+section {
+  padding: 100px 5%;
+}
+
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--gray);
+  max-width: 560px;
+}
+
+/* SERVICES */
+#services { background: var(--white); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.service-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--green);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.service-card:hover {
+  border-color: rgba(26,107,60,0.35);
+  box-shadow: 0 8px 32px rgba(26,107,60,0.08);
+  transform: translateY(-2px);
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--green-pale);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.service-card p {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--gray);
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-size: 11px;
+  background: var(--green-pale);
+  color: var(--green);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* MARKET RESEARCH PAYMENT */
+#market-research {
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+#market-research::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 100% 50%, rgba(26,107,60,0.3) 0%, transparent 60%);
+}
+
+.market-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.market-info .section-label { color: var(--gold); }
+.market-info .section-title { color: var(--white); }
+.market-info .section-desc { color: rgba(255,255,255,0.6); }
+
+.market-info ul {
+  list-style: none;
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.market-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+.market-info li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.market-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(200,168,75,0.25);
+  border-radius: 16px;
+  padding: 36px 32px;
+}
+
+.market-price-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  letter-spacing: 1px;
+  padding: 2px 20px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.market-price-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 28px;
+}
+
+.market-form { display: flex; flex-direction: column; gap: 14px; }
+
+.market-form input,
+.market-form select,
+.market-form textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13.5px;
+  color: var(--white);
+  font-family: 'Noto Sans KR', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.market-form input::placeholder,
+.market-form textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.market-form select option { background: #1a2e22; color: var(--white); }
+
+.market-form input:focus,
+.market-form select:focus,
+.market-form textarea:focus {
+  border-color: rgba(200,168,75,0.5);
+}
+
+.market-form textarea { resize: vertical; min-height: 80px; }
+
+.market-pay-info {
+  background: rgba(200,168,75,0.08);
+  border: 1px solid rgba(200,168,75,0.15);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+}
+
+.market-pay-info strong { color: var(--gold); }
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btn-gold:hover { background: var(--gold-light); }
+
+/* TAX INVOICE */
+.tax-section {
+  background: var(--green-pale);
+  border: 1px solid rgba(26,107,60,0.15);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-top: 16px;
+}
+
+.tax-section h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tax-section p {
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--gray);
+}
+
+.tax-section strong { color: var(--green-dark); }
+
+/* PROCESS */
+#process { background: var(--gray-light); }
+
+.process-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), var(--green), transparent);
+  opacity: 0.3;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+}
+
+.step-num {
+  width: 64px;
+  height: 64px;
+  background: var(--white);
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--green);
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s;
+}
+
+.step:hover .step-num {
+  background: var(--green);
+  color: var(--white);
+}
+
+.step h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.step p {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* CONTACT */
+#contact { background: var(--white); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  margin-top: 56px;
+  align-items: start;
+}
+
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info-card {
+  background: var(--gray-light);
+  border-radius: 10px;
+  padding: 20px 22px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.contact-info-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--green-pale);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.contact-info-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.contact-info-value {
+  font-size: 13.5px;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* FORM */
+.form-wrapper {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 36px;
+  box-shadow: 0 4px 32px rgba(26,107,60,0.06);
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 11px 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(26,107,60,0.08);
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.required { color: #c0392b; }
+
+.btn-submit {
+  width: 100%;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.btn-submit:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+.form-notice {
+  font-size: 11.5px;
+  color: var(--gray);
+  margin-top: 14px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.form-notice strong { color: var(--green); }
+
+/* SECURITY BADGE */
+.security-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-pale);
+  border: 1px solid rgba(26,107,60,0.2);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 11.5px;
+  color: var(--green-dark);
+  margin-bottom: 20px;
+}
+
+.security-badge::before {
+  content: '🔒';
+  font-size: 14px;
+}
+
+/* SUCCESS MESSAGE */
+.form-success {
+  display: none;
+  background: var(--green-pale);
+  border: 1px solid rgba(26,107,60,0.25);
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+}
+
+.form-success h4 { color: var(--green-dark); font-size: 18px; margin-bottom: 8px; }
+.form-success p { color: var(--gray); font-size: 13.5px; line-height: 1.7; }
+
+/* TAX INFO SECTION */
+#tax-info {
+  background: var(--dark);
+  padding: 80px 5%;
+}
+
+.tax-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.tax-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 28px 28px;
+  transition: border-color 0.2s;
+}
+
+.tax-card:hover { border-color: rgba(200,168,75,0.35); }
+
+.tax-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tax-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.tax-card-icon.gold { background: rgba(200,168,75,0.15); }
+.tax-card-icon.blue { background: rgba(59,130,246,0.12); }
+
+.tax-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.tax-card h3 span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  margin-top: 1px;
+}
+
+.tax-info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tax-info-list li {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.tax-info-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.tax-highlight {
+  background: rgba(200,168,75,0.08);
+  border: 1px solid rgba(200,168,75,0.2);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: var(--gold);
+  line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+  background: #080f0c;
+  padding: 56px 5% 32px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--white);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.footer-brand-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.footer-col li a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col li a:hover { color: var(--gold); }
+
+.footer-bottom {
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer-domain {
+  font-size: 12px;
+  color: rgba(200,168,75,0.6);
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.modal h3 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+
+/* HAMBURGER */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.2s;
+}
+
+/* SCROLL INDICATOR */
+.scroll-line {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.scroll-dot {
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  animation: bounce 1.5s infinite;
+}
+
+.scroll-dot:nth-child(2) { animation-delay: 0.2s; }
+.scroll-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(3px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero-right { display: none; }
+  .market-inner { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .tax-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .process-steps::before { display: none; }
+}
+
+/* ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0f4526" stroke-width="2.2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M2 12h20M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-logo-text">GreenTrade</div>
+      <div class="nav-logo-sub">greentrade.co.kr</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">서비스</a></li>
+    <li><a href="#market-research">시장조사</a></li>
+    <li><a href="#process">진행절차</a></li>
+    <li><a href="#tax-info">세금계산서</a></li>
+    <li><a href="#contact" class="nav-cta">문의하기</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">중국 · 해외 기계 수입 전문</div>
+    <div class="hero-subtitle">Import &amp; Trade Solutions</div>
+    <h1 class="hero-title">
+      해외에서 찾고,<br>
+      <span>한국으로 잇다</span>
+    </h1>
+    <p class="hero-desc">
+      중국을 비롯한 해외 기계장비·산업설비·잡화의 시장조사부터
+      소싱, 품질검수, 통관, 국내 납품까지 ─ GreenTrade가
+      원스톱으로 처리합니다.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">상담 및 견적 요청</a>
+      <a href="#market-research" class="btn-outline">시장조사 신청 (₩30,000)</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-label">수입 취급 품목군</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">CN</div>
+        <div class="hero-stat-label">중국 현지 네트워크</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3일</div>
+        <div class="hero-stat-label">시장조사 결과 제공</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-icon">🏭</div>
+      <div class="hero-card-title">기계장비</div>
+      <div class="hero-card-text">공장자동화, 생산설비, 가공장비 등</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-icon">⚙️</div>
+      <div class="hero-card-title">산업설비</div>
+      <div class="hero-card-text">건설·환경·에너지 관련 산업 설비</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-icon">📦</div>
+      <div class="hero-card-title">잡화 소싱</div>
+      <div class="hero-card-text">생활용품, 전자부품, 각종 소비재</div>
+    </div>
+  </div>
+
+  <div class="scroll-line">
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label fade-in">Our Services</p>
+  <h2 class="section-title fade-in">수입 전 과정을<br>함께 합니다</h2>
+  <p class="section-desc fade-in">시장 탐색부터 최종 납품까지, 단계마다 전문가가 동행합니다.</p>
+
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-icon">🔍</div>
+      <h3>시장조사 &amp; 소싱</h3>
+      <p>중국 및 해외 현지 공급업체 발굴, 가격 비교, 스펙 검토. 빠른 시장 파악이 경쟁력입니다.</p>
+      <div class="service-tags">
+        <span class="tag">중국 알리바바</span>
+        <span class="tag">현지 공장 직거래</span>
+        <span class="tag">샘플 검토</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🏭</div>
+      <h3>기계장비 수입</h3>
+      <p>제조설비, 공장자동화 장비, 가공기계 등 산업용 기계 전반의 수입 대행 및 컨설팅.</p>
+      <div class="service-tags">
+        <span class="tag">CNC 장비</span>
+        <span class="tag">프레스·절단</span>
+        <span class="tag">자동화 설비</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">⚙️</div>
+      <h3>산업설비 수입</h3>
+      <p>건설, 환경, 에너지, 식품가공 등 다양한 산업 분야의 설비 및 플랜트 부품 수입.</p>
+      <div class="service-tags">
+        <span class="tag">건설장비</span>
+        <span class="tag">환경설비</span>
+        <span class="tag">식품기계</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">📦</div>
+      <h3>잡화·소비재 소싱</h3>
+      <p>생활용품, 전자부품, 의류·잡화, 각종 소비재를 현지 최적가로 소싱 및 수입합니다.</p>
+      <div class="service-tags">
+        <span class="tag">생활잡화</span>
+        <span class="tag">전자부품</span>
+        <span class="tag">OEM 가능</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🚢</div>
+      <h3>물류·통관 지원</h3>
+      <p>FOB/CIF 조건 협의, 운송 주선, 한국 세관 통관 업무 전반을 대행합니다.</p>
+      <div class="service-tags">
+        <span class="tag">해상·항공</span>
+        <span class="tag">통관 대행</span>
+        <span class="tag">보험 처리</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">✅</div>
+      <h3>품질검수 &amp; 인증</h3>
+      <p>출고 전 현지 품질 검수, KC·CE 등 국내외 인증 취득 컨설팅 및 서류 지원.</p>
+      <div class="service-tags">
+        <span class="tag">출고 전 검수</span>
+        <span class="tag">KC인증</span>
+        <span class="tag">CE 대응</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET RESEARCH PAYMENT -->
+<section id="market-research">
+  <div class="market-inner">
+    <div class="market-info fade-in">
+      <p class="section-label">Market Research</p>
+      <h2 class="section-title">중국 시장조사만<br>먼저 진행하기</h2>
+      <p class="section-desc">
+        아직 수입 여부를 결정하지 못하셨나요?
+        먼저 시장조사만 의뢰하고 실현 가능성을 확인하세요.
+        결과는 <strong style="color:var(--gold)">영업일 기준 3일 이내</strong> 제공됩니다.
+      </p>
+      <ul>
+        <li>중국 희망 물품 시장조사</li>
+        <li>희망 품목의 현지 생산 가능 여부 확인</li>
+        <li>예상 FOB 가격 및 최소 주문수량(MOQ) 안내</li>
+        <li>수입 시 예상 관세·부가세 안내</li>
+      </ul>
+
+      <div class="tax-section" style="margin-top:28px;">
+        <h4>🧾 세금계산서 / 현금영수증 발급</h4>
+        <p>
+          시장조사 서비스 결제 후 <strong>사업자 세금계산서</strong> 또는
+          <strong>지출증빙용 현금영수증</strong>을 발급해 드립니다.<br>
+          신청 폼 하단에서 원하시는 유형을 선택해 주세요.
+        </p>
+      </div>
+    </div>
+
+    <div class="market-card fade-in">
+      <div class="market-price-badge">₩30,000</div>
+      <p class="market-price-sub">VAT 포함 / 시장조사 1건 기준</p>
+
+      <form class="market-form" id="marketForm" onsubmit="submitMarketForm(event)">
+        <input type="text" name="name" placeholder="성함 *" required>
+        <input type="text" name="company" placeholder="회사명 (개인사업자 포함)">
+        <input type="tel" name="phone" placeholder="연락처 * (010-XXXX-XXXX)" required>
+        <input type="email" name="email" placeholder="이메일 *" required>
+        <input type="text" name="product" placeholder="조사 희망 품목명 *" required>
+        <textarea name="detail" placeholder="상세 요청사항 (규격, 수량, 용도 등)"></textarea>
+
+        <select name="receipt_type" required>
+          <option value="">세금계산서/현금영수증 선택 *</option>
+          <option value="tax_invoice">사업자 세금계산서 발급</option>
+          <option value="cash_receipt_biz">지출증빙용 현금영수증 (사업자)</option>
+          <option value="cash_receipt_personal">소득공제용 현금영수증 (개인)</option>
+          <option value="none">불필요</option>
+        </select>
+
+        <input type="text" name="biz_no" placeholder="사업자등록번호 (세금계산서 신청 시 필수)">
+
+        <div class="market-pay-info">
+          <strong>결제 방법 안내</strong><br>
+          계좌이체: <strong style="color:#e8c96a">신한은행 110-XXX-XXXXXX (예금주: 그린트레이드)</strong><br>
+          입금 후 이메일 또는 문자로 입금 확인 요청해 주세요.<br>
+          확인 후 조사 착수 및 영수증을 발급해 드립니다.
+        </div>
+
+        <button type="submit" class="btn-gold">시장조사 신청하기 →</button>
+      </form>
+
+      <div id="marketSuccess" style="display:none; margin-top:16px; background:rgba(200,168,75,0.1); border:1px solid rgba(200,168,75,0.3); border-radius:10px; padding:20px; text-align:center;">
+        <div style="font-size:28px; margin-bottom:10px;">✅</div>
+        <p style="color:var(--white); font-size:14px; line-height:1.7;">
+          신청서가 접수되었습니다!<br>
+          <span style="color:rgba(255,255,255,0.6); font-size:13px;">입금 확인 후 영업일 3일 이내 결과를 보내드립니다.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="process-header fade-in">
+    <div>
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">수입 진행 절차</h2>
+    </div>
+  </div>
+
+  <div class="process-steps">
+    <div class="step fade-in">
+      <div class="step-num">01</div>
+      <h4>문의 &amp; 상담</h4>
+      <p>품목, 수량, 예산 등 기본 정보를 알려주세요</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">02</div>
+      <h4>시장조사</h4>
+      <p>현지 공급업체 발굴 및 가격·스펙 비교</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">03</div>
+      <h4>견적 확정</h4>
+      <p>최적 공급처 선정 후 최종 견적 제시</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">04</div>
+      <h4>계약 &amp; 발주</h4>
+      <p>계약서 작성, 계약금 송금, 생산 착수</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">05</div>
+      <h4>품질 검수</h4>
+      <p>출고 전 현지 검수 또는 제3자 검수 진행</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">06</div>
+      <h4>통관 &amp; 납품</h4>
+      <p>수입 통관 완료 후 지정 장소 납품</p>
+    </div>
+  </div>
+</section>
+
+<!-- TAX INFO -->
+<section id="tax-info">
+  <p class="section-label fade-in" style="color:var(--gold)">증빙서류 안내</p>
+  <h2 class="section-title fade-in" style="color:var(--white)">세금계산서 &amp; 현금영수증<br>발급 안내</h2>
+
+  <div class="tax-grid">
+    <div class="tax-card fade-in">
+      <div class="tax-card-header">
+        <div class="tax-card-icon gold">🧾</div>
+        <h3>사업자 세금계산서 <span>Tax Invoice</span></h3>
+      </div>
+      <ul class="tax-info-list">
+        <li>사업자등록번호가 있는 법인 및 개인사업자 신청 가능</li>
+        <li>서비스 결제 완료 후 <strong style="color:var(--gold)">영업일 3일 이내</strong> 발행</li>
+        <li>전자세금계산서로 발행 (이메일 수신)</li>
+        <li>공급받는자 사업자번호, 상호, 대표자명, 업태·종목 필요</li>
+        <li>부가세 10% 포함 금액으로 발급</li>
+      </ul>
+      <div class="tax-highlight">
+        신청 시 사업자등록증 사본을 이메일로 보내주시면<br>신속하게 처리해 드립니다.
+      </div>
+    </div>
+
+    <div class="tax-card fade-in">
+      <div class="tax-card-header">
+        <div class="tax-card-icon blue">🏷️</div>
+        <h3>현금영수증 <span>Cash Receipt</span></h3>
+      </div>
+      <ul class="tax-info-list">
+        <li><strong style="color:#93c5fd">지출증빙용</strong>: 사업자 비용처리를 위한 영수증 (사업자번호 기재)</li>
+        <li><strong style="color:#93c5fd">소득공제용</strong>: 개인 소득공제를 위한 영수증 (주민등록번호/휴대폰번호 기재)</li>
+        <li>국세청 현금영수증 시스템으로 발행</li>
+        <li>신청 즉시 또는 결제 확인 후 발급 처리</li>
+        <li>연간 이용 내역은 국세청 홈택스에서 확인 가능</li>
+      </ul>
+      <div class="tax-highlight">
+        발급 문의: <strong>kimsketch@naver.com</strong><br>
+        문의 시 결제 일자, 금액, 증빙 종류를 함께 알려주세요.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label fade-in">Contact Us</p>
+  <h2 class="section-title fade-in">상담 및 견적 요청</h2>
+  <p class="section-desc fade-in">어떤 품목이든 먼저 문의하세요. 빠르고 정확하게 답변드립니다.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info-cards">
+      <div class="contact-info-card fade-in">
+        <div class="contact-info-icon">📧</div>
+        <div>
+          <div class="contact-info-label">이메일</div>
+          <div class="contact-info-value">kimsketch@naver.com<br><span style="font-size:12px;color:#888">24시간 접수 / 영업일 내 회신</span></div>
+        </div>
+      </div>
+      <div class="contact-info-card fade-in">
+        <div class="contact-info-icon">🌐</div>
+        <div>
+          <div class="contact-info-label">웹사이트</div>
+          <div class="contact-info-value">www.greentrade.co.kr</div>
+        </div>
+      </div>
+      <div class="contact-info-card fade-in">
+        <div class="contact-info-icon">🕐</div>
+        <div>
+          <div class="contact-info-label">운영시간</div>
+          <div class="contact-info-value">월–금 09:00 ~ 18:00<br><span style="font-size:12px;color:#888">토·일·공휴일 제외 (온라인 접수는 상시)</span></div>
+        </div>
+      </div>
+      <div class="contact-info-card fade-in" style="background:var(--green-pale); border:1px solid rgba(26,107,60,0.15);">
+        <div class="contact-info-icon" style="background:var(--white);">🔒</div>
+        <div>
+          <div class="contact-info-label" style="color:var(--green);">보안 안내</div>
+          <div class="contact-info-value" style="font-size:12.5px; line-height:1.7; color:var(--gray);">
+            고객 문의 내용은 SSL 암호화 전송되며, 내부 업무 외 제3자에게 제공되지 않습니다. 개인정보는 문의 처리 후 안전하게 파기됩니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-wrapper fade-in">
+      <div class="security-badge">SSL 보안 적용 · 개인정보 암호화 전송</div>
+      <div class="form-title">상담 / 견적 요청</div>
+      <p class="form-subtitle">양식을 작성하시면 담당자가 직접 연락드립니다.</p>
+
+      <form id="contactForm" onsubmit="submitContactForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>성함 <span class="required">*</span></label>
+            <input type="text" name="name" placeholder="홍길동" required>
+          </div>
+          <div class="form-group">
+            <label>회사명</label>
+            <input type="text" name="company" placeholder="(주)그린트레이드">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>연락처 <span class="required">*</span></label>
+            <input type="tel" name="phone" placeholder="010-0000-0000" required>
+          </div>
+          <div class="form-group">
+            <label>이메일 <span class="required">*</span></label>
+            <input type="email" name="email" placeholder="email@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>문의 유형 <span class="required">*</span></label>
+          <select name="inquiry_type" required>
+            <option value="">선택해 주세요</option>
+            <option value="consult">일반 상담</option>
+            <option value="quote">수입 견적 요청</option>
+            <option value="sourcing">소싱 의뢰</option>
+            <option value="logistics">물류·통관 문의</option>
+            <option value="other">기타</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>품목명 / 문의 내용 <span class="required">*</span></label>
+          <textarea name="message" placeholder="수입하고자 하는 품목, 수량, 규격, 용도 등을 자세히 적어주시면 더 빠르게 안내드릴 수 있습니다." required></textarea>
+        </div>
+        <div class="form-group">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:400;">
+            <input type="checkbox" name="privacy" required style="width:auto;padding:0;border:none;box-shadow:none;">
+            개인정보 수집 및 이용에 동의합니다. <span class="required">*</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-submit">문의 보내기 →</button>
+      </form>
+
+      <div id="contactSuccess" class="form-success">
+        <h4>✅ 문의가 접수되었습니다!</h4>
+        <p>입력하신 연락처로 <strong>영업일 1~2일 이내</strong> 담당자가 연락드립니다.<br>
+        급한 문의는 이메일(kimsketch@naver.com)로 직접 보내주세요.</p>
+      </div>
+
+      <p class="form-notice">
+        <strong>🔒 보안 전송</strong> · 작성하신 내용은 암호화되어 전달됩니다.<br>
+        수집된 정보는 상담 목적 외에 사용되지 않습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">GreenTrade</div>
+      <p class="footer-brand-desc">
+        중국 및 해외 기계장비·산업설비·잡화 수입 전문<br>
+        시장조사부터 통관·납품까지 원스톱 서비스<br><br>
+        greentrade.co.kr
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>서비스</h4>
+      <ul>
+        <li><a href="#services">시장조사 &amp; 소싱</a></li>
+        <li><a href="#services">기계장비 수입</a></li>
+        <li><a href="#services">산업설비 수입</a></li>
+        <li><a href="#services">물류·통관</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>안내</h4>
+      <ul>
+        <li><a href="#market-research">시장조사 신청</a></li>
+        <li><a href="#tax-info">세금계산서 발급</a></li>
+        <li><a href="#process">진행 절차</a></li>
+        <li><a href="#contact">문의하기</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 GreenTrade. All rights reserved. 무단 전재 및 재배포 금지.</p>
+    <p class="footer-domain">greentrade.co.kr</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = 'none';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(14,26,20,0.98);padding:20px 5%;gap:16px;z-index:999;';
+  }
+}
+
+function submitContactForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('contactSuccess');
+  form.style.display = 'none';
+  success.style.display = 'block';
+  // In production: integrate with Formspree, EmailJS, or backend API
+  // Example: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(form) })
+}
+
+function submitMarketForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('marketForm');
+  const success = document.getElementById('marketSuccess');
+  form.style.display = 'none';
+  success.style.display = 'block';
+}
+
+// Scroll animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.style.background = 'rgba(14,26,20,0.99)';
+  } else {
+    nav.style.background = 'rgba(14,26,20,0.96)';
+  }
+});
+
+// Smooth close hamburger on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    const links = document.querySelector('.nav-links');
+    links.style.display = 'none';
+  });
+});
+</script>
+</body>
+</html>
