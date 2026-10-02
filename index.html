@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GreenTrade | 중국·해외 기계 수입 전문</title>
 <meta name="description" content="GreenTrade - 중국 및 해외 기계·산업설비·잡화 수입 전문. 시장조사부터 통관, 납품까지 원스톱 서비스.">
+<link rel="canonical" href="https://greentrade.co.kr/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GreenTrade">
+<meta property="og:title" content="GreenTrade | 중국·해외 기계 수입 전문">
+<meta property="og:description" content="중국 및 해외 기계·산업설비·잡화 수입 전문. 시장조사부터 통관, 납품까지 원스톱 서비스.">
+<meta property="og:url" content="https://greentrade.co.kr/">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GreenTrade | 중국·해외 기계 수입 전문">
+<meta name="twitter:description" content="중국 및 해외 기계·산업설비·잡화 수입 전문. 시장조사부터 통관, 납품까지 원스톱 서비스.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230f4526'/%3E%3Ccircle cx='12' cy='12' r='7' fill='none' stroke='%23c8a84b' stroke-width='1.8'/%3E%3Cpath d='M5 12h14M12 5c-2 2.2-3 4.5-3 7s1 4.8 3 7M12 5c2 2.2 3 4.5 3 7s-1 4.8-3 7' fill='none' stroke='%23c8a84b' stroke-width='1.8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -1561,22 +1573,47 @@ function toggleMenu() {
   }
 }
 
-function submitContactForm(e) {
+// 문의 접수 엔드포인트 (Google Apps Script 웹앱 URL로 교체)
+const CONTACT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw8C5fWaOcFvHLxrN85eYWunlrumVo33eBicwMFP-uOxytjEYrPAmqVjx6k3AENbfLZPw/exec';
+
+async function postForm(payload) {
+  const res = await fetch(CONTACT_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) throw new Error('전송 실패');
+  return res.json();
+}
+
+async function submitContactForm(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
   const success = document.getElementById('contactSuccess');
-  form.style.display = 'none';
-  success.style.display = 'block';
-  // In production: integrate with Formspree, EmailJS, or backend API
-  // Example: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(form) })
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.type = '상담/견적';
+  try {
+    await postForm(data);
+    form.style.display = 'none';
+    success.style.display = 'block';
+  } catch (err) {
+    alert('전송 중 문제가 발생했습니다. 이메일(kimsketch@naver.com)로 직접 문의해 주세요.');
+  }
 }
 
-function submitMarketForm(e) {
+async function submitMarketForm(e) {
   e.preventDefault();
   const form = document.getElementById('marketForm');
   const success = document.getElementById('marketSuccess');
-  form.style.display = 'none';
-  success.style.display = 'block';
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.type = '시장조사 신청';
+  try {
+    await postForm(data);
+    form.style.display = 'none';
+    success.style.display = 'block';
+  } catch (err) {
+    alert('신청 전송 중 문제가 발생했습니다. 이메일(kimsketch@naver.com)로 직접 문의해 주세요.');
+  }
 }
 
 // Scroll animation
