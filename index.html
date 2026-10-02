@@ -138,6 +138,14 @@ nav {
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(180deg, rgba(14,26,20,0.82) 0%, rgba(14,26,20,0.55) 50%, rgba(14,26,20,0.92) 100%),
+    url('assets/hero-bg.jpg') center/cover no-repeat;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
     radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,107,60,0.25) 0%, transparent 70%),
     radial-gradient(ellipse 40% 60% at 20% 80%, rgba(200,168,75,0.08) 0%, transparent 60%);
 }
@@ -1103,6 +1111,11 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+.service-icon svg,.hero-card-icon svg{width:34px;height:34px;color:var(--gold);}
+.tax-card-icon svg{width:30px;height:30px;}
+.service-icon,.hero-card-icon{display:flex;align-items:center;justify-content:center;}
+.market-photo{margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid rgba(200,168,75,0.25);box-shadow:0 12px 32px rgba(0,0,0,0.35);}
+.market-photo img{display:block;width:100%;height:230px;object-fit:cover;}
 </style>
 </head>
 <body>
@@ -1172,17 +1185,17 @@ footer {
 
   <div class="hero-right">
     <div class="hero-card">
-      <div class="hero-card-icon">🏭</div>
+      <div class="hero-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l5 3v-3l5 3V7h8v14H3z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg></div>
       <div class="hero-card-title">기계장비</div>
       <div class="hero-card-text">공장자동화, 생산설비, 가공장비 등</div>
     </div>
     <div class="hero-card">
-      <div class="hero-card-icon">⚙️</div>
+      <div class="hero-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h.01a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55h.01a1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.01a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg></div>
       <div class="hero-card-title">산업설비</div>
       <div class="hero-card-text">건설·환경·에너지 관련 산업 설비</div>
     </div>
     <div class="hero-card">
-      <div class="hero-card-icon">📦</div>
+      <div class="hero-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
       <div class="hero-card-title">잡화 소싱</div>
       <div class="hero-card-text">생활용품, 전자부품, 각종 소비재</div>
     </div>
@@ -1203,7 +1216,7 @@ footer {
 
   <div class="services-grid">
     <div class="service-card fade-in">
-      <div class="service-icon">🔍</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
       <h3>시장조사 &amp; 소싱</h3>
       <p>중국 및 해외 현지 공급업체 발굴, 가격 비교, 스펙 검토. 빠른 시장 파악이 경쟁력입니다.</p>
       <div class="service-tags">
@@ -1213,7 +1226,7 @@ footer {
       </div>
     </div>
     <div class="service-card fade-in">
-      <div class="service-icon">🏭</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l5 3v-3l5 3V7h8v14H3z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg></div>
       <h3>기계장비 수입</h3>
       <p>제조설비, 공장자동화 장비, 가공기계 등 산업용 기계 전반의 수입 대행 및 컨설팅.</p>
       <div class="service-tags">
@@ -1223,7 +1236,7 @@ footer {
       </div>
     </div>
     <div class="service-card fade-in">
-      <div class="service-icon">⚙️</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h.01a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55h.01a1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.01a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg></div>
       <h3>산업설비 수입</h3>
       <p>건설, 환경, 에너지, 식품가공 등 다양한 산업 분야의 설비 및 플랜트 부품 수입.</p>
       <div class="service-tags">
@@ -1233,7 +1246,7 @@ footer {
       </div>
     </div>
     <div class="service-card fade-in">
-      <div class="service-icon">📦</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
       <h3>잡화·소비재 소싱</h3>
       <p>생활용품, 전자부품, 의류·잡화, 각종 소비재를 현지 최적가로 소싱 및 수입합니다.</p>
       <div class="service-tags">
@@ -1243,7 +1256,7 @@ footer {
       </div>
     </div>
     <div class="service-card fade-in">
-      <div class="service-icon">🚢</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l1.5 4h15L21 17M12 17V6M12 6h7l-2 5h-5M5 13h5l1-3H7"/></svg></div>
       <h3>물류·통관 지원</h3>
       <p>FOB/CIF 조건 협의, 운송 주선, 한국 세관 통관 업무 전반을 대행합니다.</p>
       <div class="service-tags">
@@ -1253,7 +1266,7 @@ footer {
       </div>
     </div>
     <div class="service-card fade-in">
-      <div class="service-icon">✅</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8L12 2z"/><path d="M9.5 12l2 2 3.5-4"/></svg></div>
       <h3>품질검수 &amp; 인증</h3>
       <p>출고 전 현지 품질 검수, KC·CE 등 국내외 인증 취득 컨설팅 및 서류 지원.</p>
       <div class="service-tags">
@@ -1282,6 +1295,10 @@ footer {
         <li>예상 FOB 가격 및 최소 주문수량(MOQ) 안내</li>
         <li>수입 시 예상 관세·부가세 안내</li>
       </ul>
+
+      <div class="market-photo fade-in">
+        <img src="assets/machinery.jpg" alt="산업용 기계장비" loading="lazy">
+      </div>
 
       <div class="tax-section" style="margin-top:28px;">
         <h4>🧾 세금계산서 / 현금영수증 발급</h4>
@@ -1387,7 +1404,7 @@ footer {
   <div class="tax-grid">
     <div class="tax-card fade-in">
       <div class="tax-card-header">
-        <div class="tax-card-icon gold">🧾</div>
+        <div class="tax-card-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"/><path d="M9 7h6M9 11h6"/></svg></div>
         <h3>사업자 세금계산서 <span>Tax Invoice</span></h3>
       </div>
       <ul class="tax-info-list">
@@ -1404,7 +1421,7 @@ footer {
 
     <div class="tax-card fade-in">
       <div class="tax-card-header">
-        <div class="tax-card-icon blue">🏷️</div>
+        <div class="tax-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V4h7l10 8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
         <h3>현금영수증 <span>Cash Receipt</span></h3>
       </div>
       <ul class="tax-info-list">
@@ -1645,6 +1662,5 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   });
 });
 </script>
-<!-- deploy trigger 2026-10-02 18:25 -->
 </body>
 </html>
