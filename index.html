@@ -1596,7 +1596,7 @@ const CONTACT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw8C5fWaOcFvHL
 async function postForm(payload) {
   const res = await fetch(CONTACT_ENDPOINT, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // application/json은 CORS preflight를 유발해 Apps Script가 차단하므로 text/plain 사용
     body: JSON.stringify(payload)
   });
   if (!res.ok) throw new Error('전송 실패');
