@@ -283,6 +283,16 @@ nav {
   letter-spacing: 0.5px;
 }
 
+.hero-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 380px;
+  background: linear-gradient(180deg, #0b1712 0%, #0f2418 55%, #0b1712 100%);
+  border-left: 1px solid rgba(200,168,75,0.16);
+  z-index: 1;
+}
 .hero-right {
   position: absolute;
   right: 5%;
@@ -295,17 +305,15 @@ nav {
 }
 
 .hero-card {
-  background: rgba(14,26,20,0.66);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(200,168,75,0.28);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,168,75,0.22);
   border-radius: 12px;
   padding: 20px 24px;
   width: 220px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, transform 0.2s;
 }
 
-.hero-card:hover { border-color: rgba(200,168,75,0.55); }
+.hero-card:hover { border-color: rgba(200,168,75,0.5); transform: translateX(-4px); }
 
 .hero-card-icon {
   font-size: 22px;
@@ -1095,6 +1103,7 @@ footer {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .hero-right { display: none; }
+  .hero-panel { display: none; }
   .market-inner { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
@@ -1154,6 +1163,7 @@ footer {
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
+  <div class="hero-panel"></div>
 
   <div class="hero-content">
     <div class="hero-badge">중국 · 해외 기계 수입 전문</div>
