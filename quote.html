@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>무료 견적 요청 | GreenTrade</title>
+<meta name="description" content="중국 기계·설비 수입대행 무료 견적 요청. 회사, 품목, 수량, 납기, 배송지를 보내 주시면 확인 후 견적으로 회신합니다. 이 페이지에서는 가격을 확정하거나 결제하지 않습니다.">
+<link rel="canonical" href="https://greentrade.co.kr/quote.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GreenTrade">
+<meta property="og:title" content="무료 견적 요청 | GreenTrade">
+<meta property="og:description" content="중국 기계·설비 수입대행 견적 요청. 제출만으로 가격이 확정되거나 결제되지 않습니다.">
+<meta property="og:url" content="https://greentrade.co.kr/quote.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230f4526'/%3E%3Ccircle cx='12' cy='12' r='7' fill='none' stroke='%23c8a84b' stroke-width='1.8'/%3E%3Cpath d='M5 12h14M12 5c-2 2.2-3 4.5-3 7s1 4.8 3 7M12 5c2 2.2 3 4.5 3 7s-1 4.8-3 7' fill='none' stroke='%23c8a84b' stroke-width='1.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1a6b3c;
+  --green-dark: #0f4526;
+  --green-light: #2d9155;
+  --green-pale: #e8f5ee;
+  --gold: #c8a84b;
+  --gold-light: #e8c96a;
+  --dark: #0e1a14;
+  --gray: #5a6b61;
+  --gray-light: #f0f5f2;
+  --white: #ffffff;
+  --border: rgba(26,107,60,0.15);
+  --danger: #c0392b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  background: var(--white);
+  overflow-x: hidden;
+  word-break: keep-all;
+}
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(14,26,20,0.96);
+  backdrop-filter: blur(12px);
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  border-bottom: 1px solid rgba(200,168,75,0.2);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
+.nav-logo-icon {
+  width: 36px; height: 36px; background: var(--gold); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.nav-logo-icon svg { width: 22px; height: 22px; }
+.nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--white); line-height: 1; }
+.nav-logo-sub { font-size: 10px; color: var(--gold); letter-spacing: 1px; line-height: 1; }
+.nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  background: var(--gold);
+  color: var(--dark) !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 700 !important;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold-light) !important; }
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px; cursor: pointer;
+  background: none; border: none; padding: 8px;
+}
+.nav-hamburger span { width: 22px; height: 2px; background: var(--white); display: block; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.page-hero { padding: 112px 5% 28px; background: linear-gradient(165deg, #ffffff 0%, #f7fbf8 48%, #e8f5ee 100%); }
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--green-light); margin-bottom: 10px;
+}
+.page-hero h1 { font-size: 36px; line-height: 1.3; color: var(--green-dark); margin-bottom: 12px; }
+.page-hero .lede { max-width: 42em; font-size: 16px; line-height: 1.75; color: var(--dark); }
+.quote-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(240px, 0.8fr);
+  gap: 28px;
+  padding: 8px 5% 88px;
+  background: linear-gradient(180deg, #e8f5ee 0%, var(--gray-light) 120px);
+  align-items: start;
+}
+.form-wrapper, .side-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(26,107,60,0.06);
+}
+.form-wrapper { padding: 32px 28px 28px; min-width: 0; }
+.side-card { padding: 22px 20px; margin-bottom: 16px; }
+.side-card h2 { font-size: 16px; margin-bottom: 10px; color: var(--green-dark); }
+.side-card p, .side-card li { font-size: 14px; line-height: 1.7; color: #3d5248; }
+.side-card ol { margin-left: 1.1em; display: flex; flex-direction: column; gap: 8px; }
+.disclaimer {
+  background: var(--green-pale);
+  border: 1px solid rgba(26,107,60,0.18);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--green-dark);
+  margin-bottom: 22px;
+}
+fieldset { border: 0; margin: 0 0 8px; padding: 0; min-width: 0; }
+legend { font-size: 15px; font-weight: 700; color: var(--green-dark); margin: 6px 0 12px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-width: 0; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; min-width: 0; }
+.form-group label { font-size: 13px; font-weight: 700; color: var(--dark); }
+.req { color: var(--danger); font-weight: 700; }
+.opt { font-weight: 500; color: var(--gray); }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,0.14);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--dark);
+  background: var(--white);
+}
+.form-group textarea { resize: vertical; min-height: 96px; }
+.form-group input.is-invalid, .form-group select.is-invalid, .form-group textarea.is-invalid {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+}
+.field-hint { font-size: 12.5px; line-height: 1.6; color: var(--gray); overflow-wrap: anywhere; }
+.field-error { display: none; font-size: 12.5px; line-height: 1.55; color: var(--danger); }
+.field-error.is-visible { display: block; }
+.form-errors {
+  display: none;
+  background: #fdecea;
+  border: 1px solid rgba(192,57,43,0.35);
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.form-errors.is-visible { display: block; }
+.form-errors, .form-group input, .form-group select, .form-group textarea, .consent-check input { scroll-margin-top: 88px; }
+.consent {
+  background: var(--gray-light);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 4px 0 16px;
+}
+.consent h2 { font-size: 14px; margin-bottom: 8px; }
+.consent ul { margin: 0 0 12px 1.1em; color: #3d5248; font-size: 13px; line-height: 1.65; }
+.consent-check {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; font-weight: 700; line-height: 1.5; cursor: pointer;
+}
+.consent-check input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+.consent-check input.is-invalid { outline: 2px solid var(--danger); outline-offset: 2px; }
+.btn-submit {
+  width: 100%;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  min-height: 52px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.btn-submit:hover { background: var(--green-dark); }
+.btn-submit:disabled { opacity: 0.7; cursor: wait; }
+.form-notice { font-size: 12.5px; color: var(--gray); line-height: 1.7; text-align: center; margin-top: 12px; }
+footer { background: #080f0c; padding: 48px 5% 28px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.footer-brand-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--white); letter-spacing: 2px; margin-bottom: 10px; }
+.footer-brand-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.8; }
+.footer-col h2 { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-col a:hover { color: var(--gold); }
+.footer-biz { display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 0 8px; }
+.footer-biz p { font-size: 14px; color: #e7eee9; }
+.footer-biz span { color: var(--gold-light); font-weight: 700; margin-right: 6px; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 8px; }
+.footer-copy { font-size: 13px; color: #c5d0c9; }
+.footer-domain { font-size: 12px; color: rgba(200,168,75,0.7); }
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-links.is-open {
+    display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0;
+    background: rgba(14,26,20,0.98); padding: 20px 5% 24px; gap: 16px; z-index: 999;
+  }
+  .quote-wrap, .footer-top, .form-row { grid-template-columns: 1fr; }
+  .page-hero { padding: 96px 20px 20px; }
+  .page-hero h1 { font-size: 28px; }
+  .quote-wrap { padding: 8px 16px 64px; }
+  .form-wrapper { padding: 22px 16px 20px; }
+}
+@media (max-width: 480px) {
+  .page-hero h1 { font-size: 24px; }
+  .footer-bottom { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0f4526" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M2 12h20M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-logo-text">GreenTrade</div>
+      <div class="nav-logo-sub">greentrade.co.kr</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">서비스</a></li>
+    <li><a href="index.html#process">진행절차</a></li>
+    <li><a href="index.html#tax-info">세금계산서</a></li>
+    <li><a href="index.html#contact">문의</a></li>
+    <li><a href="quote.html" class="nav-cta" aria-current="page">무료 견적 요청</a></li>
+  </ul>
+  <button class="nav-hamburger" type="button" aria-label="메뉴" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="page-hero">
+  <p class="section-label">Quote request</p>
+  <h1>무료 견적 요청</h1>
+  <p class="lede">중국 기계·설비 수입대행 견적에 필요한 내용만 받습니다. 보내 주셔도 가격이 정해지지 않고, 결제되지도 않습니다. 확인 후 이메일로 견적을 회신합니다.</p>
+</header>
+
+<div class="quote-wrap">
+  <!-- Field names match 수입대행 견적서 labels. Contract: docs/quote-form-mapping.md -->
+  <form id="quote-form" class="form-wrapper" action="https://formsubmit.co/gtrade@mail.grokbot.com" method="POST" accept-charset="UTF-8">
+    <input type="hidden" name="_subject" id="quote-subject" value="[견적요청]">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_next" value="https://greentrade.co.kr/quote-thanks.html">
+    <input type="hidden" name="_replyto" id="quote-replyto" value="">
+    <input type="hidden" name="form_id" value="greentrade-quote-request">
+    <input type="hidden" name="form_version" value="1">
+    <input type="hidden" name="담당자 / 연락처" id="contact-combined" value="">
+    <input type="hidden" name="견적서_입력JSON" id="quote-json" value="">
+    <div aria-hidden="true">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+    </div>
+
+    <p class="disclaimer">이 화면은 견적 요청입니다. 금액을 계산해 보여 드리지 않으며, 결제 기능도 없습니다.</p>
+    <div id="form-errors" class="form-errors" role="alert"></div>
+
+    <fieldset>
+      <legend>고객</legend>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="company">수신 (고객 상호) <span class="req">*</span></label>
+          <input id="company" name="수신 (고객 상호)" type="text" autocomplete="organization" maxlength="100" required placeholder="(주)그린예시">
+          <p class="field-error" id="err-company"></p>
+        </div>
+        <div class="form-group">
+          <label for="biz">사업자등록번호 <span class="opt">(선택)</span></label>
+          <input id="biz" name="사업자등록번호" type="text" inputmode="numeric" maxlength="12" placeholder="000-00-00000" autocomplete="off" pattern="\d{3}-?\d{2}-?\d{5}">
+          <p class="field-hint">없으면 비워 두세요. 견적서 사업자등록번호 칸에만 적습니다.</p>
+          <p class="field-error" id="err-biz"></p>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="person">담당자명 <span class="req">*</span></label>
+          <input id="person" name="담당자명" type="text" autocomplete="name" maxlength="40" required placeholder="홍길동">
+          <p class="field-error" id="err-person"></p>
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처 <span class="req">*</span></label>
+          <input id="phone" name="연락처" type="tel" autocomplete="tel" maxlength="20" required placeholder="010-0000-0000" inputmode="tel" pattern="^(?:\+?82[-\s]?)?0\d{1,2}[-\s]?\d{3,4}[-\s]?\d{4}$">
+          <p class="field-error" id="err-phone"></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">이메일 <span class="req">*</span></label>
+        <input id="email" name="이메일" type="email" autocomplete="email" maxlength="120" required placeholder="name@company.com">
+        <p class="field-hint">견적 회신에 씁니다. 견적서 시트에는 이메일 칸이 없습니다.</p>
+        <p class="field-error" id="err-email"></p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>품목</legend>
+      <div class="form-group">
+        <label for="item">품목명 <span class="req">*</span></label>
+        <input id="item" name="품목명" type="text" maxlength="150" required placeholder="예: CNC 선반, 유압 프레스">
+        <p class="field-hint">대표 장비 1건입니다. 더 있으면 요청사항에 품목·수량·단가를 적어 주세요.</p>
+        <p class="field-error" id="err-item"></p>
+      </div>
+      <div class="form-group">
+        <label for="spec">모델·사양</label>
+        <textarea id="spec" name="모델·사양" maxlength="2000" placeholder="모델명, 규격, 전원, 용량 등"></textarea>
+        <p class="field-hint">모델·사양 또는 참고 링크 중 하나 이상 필요합니다.</p>
+        <p class="field-error" id="err-spec"></p>
+      </div>
+      <div class="form-group">
+        <label for="link">참고 링크 <span class="opt">(1688 / Alibaba 등)</span></label>
+        <input id="link" name="참고 링크" type="text" inputmode="url" maxlength="1000" placeholder="https://detail.1688.com/… 또는 alibaba.com/…" autocomplete="off">
+        <p class="field-error" id="err-link"></p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="qty">수량 <span class="req">*</span></label>
+          <input id="qty" name="수량" type="text" inputmode="numeric" maxlength="6" required placeholder="1" pattern="[1-9]\d{0,5}">
+          <p class="field-error" id="err-qty"></p>
+        </div>
+        <div class="form-group">
+          <label for="currency">통화 <span class="opt">(단가가 있을 때)</span></label>
+          <select id="currency" name="통화">
+            <option value="">선택 안 함</option>
+            <option value="USD">USD</option>
+            <option value="CNY">CNY</option>
+            <option value="KRW">KRW (희망 예산)</option>
+          </select>
+          <p class="field-error" id="err-currency"></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price">희망 단가 <span class="opt">(선택, 공급사 견적가 포함)</span></label>
+        <input id="price" name="희망 단가" type="text" inputmode="decimal" maxlength="16" placeholder="모르면 비워 두세요" autocomplete="off">
+        <p class="field-hint">USD·CNY는 견적서의 통화와 FOB 단가(외화)에 옮깁니다. KRW는 희망 예산으로만 보고, FOB 단가에는 넣지 않습니다. 여기 숫자는 확정 견적이 아닙니다.</p>
+        <p class="field-error" id="err-price"></p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>납기·배송</legend>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="lead">희망 납기 <span class="req">*</span></label>
+          <input id="lead" name="희망 납기" type="text" maxlength="80" required placeholder="예: 2026년 6월, 발주 후 6주">
+          <p class="field-error" id="err-lead"></p>
+        </div>
+        <div class="form-group">
+          <label for="dest">배송지 <span class="req">*</span></label>
+          <select id="dest" name="배송지" required autocomplete="address-level1">
+            <option value="">시·도 선택</option>
+            <option>서울특별시</option>
+            <option>부산광역시</option>
+            <option>대구광역시</option>
+            <option>인천광역시</option>
+            <option>광주광역시</option>
+            <option>대전광역시</option>
+            <option>울산광역시</option>
+            <option>세종특별자치시</option>
+            <option>경기도</option>
+            <option>강원특별자치도</option>
+            <option>충청북도</option>
+            <option>충청남도</option>
+            <option>전북특별자치도</option>
+            <option>전라남도</option>
+            <option>경상북도</option>
+            <option>경상남도</option>
+            <option>제주특별자치도</option>
+          </select>
+          <p class="field-hint">시·도만 받습니다. 내륙 운송 구간을 가늠하는 데 쓰고, 상세 주소는 받지 않습니다.</p>
+          <p class="field-error" id="err-dest"></p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="notes">요청사항 <span class="opt">(선택)</span></label>
+        <textarea id="notes" name="요청사항" maxlength="2000" placeholder="추가 품목, 설치 장소 조건, 인증 여부 등"></textarea>
+        <p class="field-error" id="err-notes"></p>
+      </div>
+    </fieldset>
+
+    <div class="consent">
+      <h2>개인정보 수집·이용 동의</h2>
+      <ul>
+        <li>수집 항목: 상호, 사업자등록번호(선택), 담당자명, 연락처, 이메일, 품목명, 모델·사양, 참고 링크, 수량, 희망 단가(선택), 통화, 희망 납기, 배송지(시·도), 요청사항</li>
+        <li>목적: 견적 회신</li>
+        <li>보유기간: 1년 후 파기</li>
+      </ul>
+      <label class="consent-check" for="privacy">
+        <input id="privacy" name="개인정보 수집·이용 동의" type="checkbox" value="동의" required>
+        <span>위와 같이 개인정보를 수집·이용하는 데 동의합니다. <span class="req">*</span></span>
+      </label>
+      <p class="field-error" id="err-privacy"></p>
+    </div>
+
+    <button type="submit" class="btn-submit" id="quote-submit">견적 요청 보내기</button>
+    <p class="form-notice">보내기를 누르면 스팸 방지 확인 화면이 열릴 수 있습니다. 확인 후 이 사이트의 접수 완료 페이지로 돌아옵니다. 비용은 없습니다.</p>
+  </form>
+
+  <aside>
+    <div class="side-card">
+      <h2>접수 후</h2>
+      <ol>
+        <li>요청을 메일로 접수합니다.</li>
+        <li>품목, 운임, 관세를 확인합니다. 금액은 이 단계에서 산출합니다.</li>
+        <li>이메일로 견적을 회신합니다.</li>
+      </ol>
+    </div>
+    <div class="side-card">
+      <h2>미리 정해 드리지 않는 것</h2>
+      <p>환율, 해상운임, 관세, 대행 수수료는 확인 전이라 이 페이지에 적지 않습니다. 희망 단가를 적으셔도 그 금액으로 진행한다는 뜻이 아닙니다.</p>
+    </div>
+    <div class="side-card">
+      <h2>일반 상담</h2>
+      <p>품목이 아직 없으면 <a href="index.html#contact">문의</a>로 남겨 주세요. 운영은 월–금 09:00–18:00, 온라인 접수는 상시입니다.</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">GreenTrade</div>
+      <p class="footer-brand-desc">중국 및 해외 기계장비·산업설비·잡화 수입 전문<br>시장조사부터 통관·납품까지 원스톱 서비스<br><br>greentrade.co.kr</p>
+    </div>
+    <div class="footer-col">
+      <h2>서비스</h2>
+      <ul>
+        <li><a href="index.html#services">시장조사 &amp; 소싱</a></li>
+        <li><a href="index.html#services">기계장비 수입</a></li>
+        <li><a href="index.html#services">산업설비 수입</a></li>
+        <li><a href="index.html#services">물류·통관</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>안내</h2>
+      <ul>
+        <li><a href="quote.html">무료 견적 요청</a></li>
+        <li><a href="index.html#tax-info">세금계산서 발급</a></li>
+        <li><a href="index.html#process">진행 절차</a></li>
+        <li><a href="index.html#contact">문의하기</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-biz">
+    <p><span>상호:</span> 그린인터앤엠</p>
+    <p><span>대표자:</span> 김락서</p>
+    <p><span>사업자등록번호:</span> 644-61-00363</p>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 그린인터앤엠 (GreenTrade). All rights reserved.</p>
+    <p class="footer-domain">greentrade.co.kr</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const form = document.getElementById("quote-form");
+  form.noValidate = true;
+
+  const hamburger = document.querySelector(".nav-hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  hamburger.addEventListener("click", function () {
+    const open = navLinks.classList.toggle("is-open");
+    hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navLinks.classList.remove("is-open");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  const summary = document.getElementById("form-errors");
+  const submitBtn = document.getElementById("quote-submit");
+
+  function digits(value) {
+    return String(value || "").replace(/\D/g, "");
+  }
+
+  function validBiz(raw) {
+    const d = digits(raw);
+    if (d.length !== 10) return false;
+    const weights = [1, 3, 7, 1, 3, 7, 1, 3, 5];
+    let sum = 0;
+    for (let i = 0; i < 9; i += 1) sum += Number(d[i]) * weights[i];
+    sum += Math.floor((weights[8] * Number(d[8])) / 10);
+    return (10 - (sum % 10)) % 10 === Number(d[9]);
+  }
+
+  function formatBiz(raw) {
+    const d = digits(raw);
+    return d.slice(0, 3) + "-" + d.slice(3, 5) + "-" + d.slice(5);
+  }
+
+  function formatPhone(raw) {
+    let d = digits(raw);
+    if (d.indexOf("82") === 0) d = "0" + d.slice(2);
+    if (/^02\d{7}$/.test(d)) return "02-" + d.slice(2, 5) + "-" + d.slice(5);
+    if (/^02\d{8}$/.test(d)) return "02-" + d.slice(2, 6) + "-" + d.slice(6);
+    if (/^01[016789]\d{7}$/.test(d)) return d.slice(0, 3) + "-" + d.slice(3, 6) + "-" + d.slice(6);
+    if (/^01[016789]\d{8}$/.test(d)) return d.slice(0, 3) + "-" + d.slice(3, 7) + "-" + d.slice(7);
+    if (/^070\d{8}$/.test(d)) return "070-" + d.slice(3, 7) + "-" + d.slice(7);
+    if (/^0(?:3[1-3]|4[1-4]|5[1-5]|6[1-4])\d{7}$/.test(d)) return d.slice(0, 3) + "-" + d.slice(3, 6) + "-" + d.slice(6);
+    if (/^0(?:3[1-3]|4[1-4]|5[1-5]|6[1-4])\d{8}$/.test(d)) return d.slice(0, 3) + "-" + d.slice(3, 7) + "-" + d.slice(7);
+    return "";
+  }
+
+  function parsePrice(raw) {
+    const text = String(raw || "").trim().replace(/,/g, "").replace(/\s/g, "");
+    if (!text) return { ok: true, value: null };
+    if (!/^\d+(\.\d{1,2})?$/.test(text)) return { ok: false, value: null };
+    const value = Number(text);
+    if (!Number.isFinite(value) || value <= 0 || value > 1000000000000) return { ok: false, value: null };
+    return { ok: true, value: value };
+  }
+
+  function parseQty(raw) {
+    const text = String(raw || "").trim().replace(/,/g, "");
+    if (!/^\d{1,6}$/.test(text)) return null;
+    const value = Number(text);
+    return value >= 1 ? value : null;
+  }
+
+  function normalizeUrl(raw) {
+    const text = String(raw || "").trim();
+    if (!text) return { ok: true, value: "" };
+    if (/\s/.test(text)) return { ok: false, value: "" };
+    const withScheme = /^https?:\/\//i.test(text) ? text : "https://" + text;
+    try {
+      const url = new URL(withScheme);
+      if (url.protocol !== "http:" && url.protocol !== "https:") return { ok: false, value: "" };
+      if (!url.hostname || url.hostname.indexOf(".") === -1) return { ok: false, value: "" };
+      return { ok: true, value: url.href };
+    } catch (err) {
+      return { ok: false, value: "" };
+    }
+  }
+
+  function field(id) {
+    return {
+      input: document.getElementById(id),
+      error: document.getElementById("err-" + id)
+    };
+  }
+
+  const fields = ["company", "biz", "person", "phone", "email", "item", "spec", "link", "qty", "currency", "price", "lead", "dest", "notes", "privacy"]
+    .map(field);
+
+  function clearField(entry) {
+    entry.input.classList.remove("is-invalid");
+    entry.input.removeAttribute("aria-invalid");
+    if (entry.error) {
+      entry.error.textContent = "";
+      entry.error.classList.remove("is-visible");
+    }
+  }
+
+  fields.forEach(function (entry) {
+    entry.input.addEventListener("input", function () { clearField(entry); });
+    entry.input.addEventListener("change", function () { clearField(entry); });
+  });
+
+  function fail(entry, message, first) {
+    entry.input.classList.add("is-invalid");
+    entry.input.setAttribute("aria-invalid", "true");
+    entry.input.setAttribute("aria-describedby", entry.error.id);
+    entry.error.textContent = message;
+    entry.error.classList.add("is-visible");
+    return first || entry.input;
+  }
+
+  form.addEventListener("submit", function (event) {
+    if (form.dataset.ready === "1") {
+      event.preventDefault();
+      return;
+    }
+    event.preventDefault();
+    const honey = form.querySelector('[name="_honey"]');
+    if (honey && honey.value) return;
+
+    fields.forEach(clearField);
+    summary.textContent = "";
+    summary.classList.remove("is-visible");
+
+    const company = field("company");
+    const biz = field("biz");
+    const person = field("person");
+    const phone = field("phone");
+    const email = field("email");
+    const item = field("item");
+    const spec = field("spec");
+    const link = field("link");
+    const qty = field("qty");
+    const currency = field("currency");
+    const price = field("price");
+    const lead = field("lead");
+    const dest = field("dest");
+    const notes = field("notes");
+    const privacy = field("privacy");
+
+    let first = null;
+    const companyValue = company.input.value.trim();
+    const personValue = person.input.value.trim();
+    const itemValue = item.input.value.trim().replace(/\s+/g, " ");
+    const specValue = spec.input.value.trim();
+    const phoneValue = formatPhone(phone.input.value);
+    const emailValue = email.input.value.trim();
+    const qtyValue = parseQty(qty.input.value);
+    const priceParsed = parsePrice(price.input.value);
+    const linkParsed = normalizeUrl(link.input.value);
+    const leadValue = lead.input.value.trim().replace(/\s+/g, " ");
+    const bizValue = biz.input.value.trim();
+    const currencyValue = currency.input.value;
+
+    if (companyValue.length < 2) first = fail(company, "상호를 두 글자 이상 입력해 주세요.", first);
+    if (bizValue && !validBiz(bizValue)) first = fail(biz, "사업자등록번호 10자리를 확인해 주세요. 예: 000-00-00000", first);
+    if (personValue.length < 2) first = fail(person, "담당자명을 입력해 주세요.", first);
+    if (!phoneValue) first = fail(phone, "연락처를 숫자로 입력해 주세요. 예: 010-0000-0000", first);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailValue)) first = fail(email, "이메일 주소를 확인해 주세요.", first);
+    if (itemValue.length < 2) first = fail(item, "품목명을 입력해 주세요.", first);
+    if (!specValue && !link.input.value.trim()) {
+      first = fail(spec, "모델·사양 또는 참고 링크 중 하나 이상을 입력해 주세요.", first);
+      first = fail(link, "모델·사양 또는 참고 링크 중 하나 이상을 입력해 주세요.", first);
+    } else if (link.input.value.trim() && !linkParsed.ok) {
+      first = fail(link, "참고 링크는 http 주소로 입력해 주세요.", first);
+    }
+    if (qtyValue == null) first = fail(qty, "수량은 1 이상의 정수로 입력해 주세요.", first);
+    if (!priceParsed.ok) first = fail(price, "희망 단가는 0보다 큰 숫자로 입력하거나 비워 두세요.", first);
+    if (priceParsed.ok && priceParsed.value != null && !currencyValue) {
+      first = fail(currency, "단가를 적으셨으면 통화를 선택해 주세요.", first);
+    }
+    if (currencyValue && priceParsed.ok && priceParsed.value == null) {
+      first = fail(price, "통화를 고르셨으면 단가를 입력하거나, 둘 다 비워 두세요.", first);
+    }
+    if (leadValue.length < 2) first = fail(lead, "희망 납기를 입력해 주세요. 예: 2026년 6월, 발주 후 6주", first);
+    if (!dest.input.value) first = fail(dest, "배송지 시·도를 선택해 주세요.", first);
+    if (!privacy.input.checked) first = fail(privacy, "견적 회신을 위해 개인정보 수집·이용에 동의해 주세요.", first);
+
+    if (first) {
+      summary.textContent = "표시된 항목을 확인해 주세요. 요청은 아직 전송되지 않았습니다.";
+      summary.classList.add("is-visible");
+      const root = document.documentElement;
+      const previousScroll = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      summary.scrollIntoView({ block: "start", behavior: "instant" });
+      root.style.scrollBehavior = previousScroll;
+      first.focus({ preventScroll: true });
+      return;
+    }
+
+    const foreign = currencyValue === "USD" || currencyValue === "CNY";
+    const payload = {
+      form_id: "greentrade-quote-request",
+      form_version: 1,
+      paste: {
+        C5: companyValue,
+        C6: bizValue ? formatBiz(bizValue) : "",
+        C7: personValue + " / " + phoneValue,
+        B24: itemValue,
+        D24: qtyValue,
+        E24: foreign ? currencyValue : null,
+        F24: foreign ? priceParsed.value : null
+      },
+      context: {
+        "이메일": emailValue,
+        "담당자명": personValue,
+        "연락처": phoneValue,
+        "모델·사양": specValue,
+        "참고 링크": linkParsed.value,
+        "통화": currencyValue,
+        "희망 단가": priceParsed.value,
+        "희망단가_KRW": currencyValue === "KRW" ? priceParsed.value : null,
+        "희망 납기": leadValue,
+        "배송지": dest.input.value,
+        "요청사항": notes.input.value.trim(),
+        "개인정보_수집이용_동의": "동의"
+      }
+    };
+
+    company.input.value = companyValue;
+    if (bizValue) biz.input.value = formatBiz(bizValue);
+    person.input.value = personValue;
+    phone.input.value = phoneValue;
+    email.input.value = emailValue;
+    item.input.value = itemValue;
+    spec.input.value = specValue;
+    link.input.value = linkParsed.value;
+    qty.input.value = String(qtyValue);
+    if (priceParsed.value != null) price.input.value = String(priceParsed.value);
+    lead.input.value = leadValue;
+    document.getElementById("contact-combined").value = payload.paste.C7;
+    document.getElementById("quote-json").value = JSON.stringify(payload);
+    document.getElementById("quote-replyto").value = emailValue;
+    const subjectItem = itemValue.replace(/[\u0000-\u001F\u007F]/g, "").slice(0, 80);
+    document.getElementById("quote-subject").value = "[견적요청] " + subjectItem;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "전송 중…";
+    form.dataset.ready = "1";
+    form.submit();
+  });
+})();
+</script>
+</body>
+</html>

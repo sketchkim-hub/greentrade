@@ -97,8 +97,9 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 22px;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
@@ -115,11 +116,12 @@ nav {
 .nav-cta {
   background: var(--gold);
   color: var(--dark) !important;
-  padding: 8px 20px;
+  padding: 8px 16px;
   border-radius: 4px;
   font-weight: 700 !important;
   font-size: 13px !important;
   transition: background 0.2s !important;
+  white-space: nowrap;
 }
 
 .nav-cta:hover { background: var(--gold-light) !important; color: var(--dark) !important; }
@@ -359,6 +361,9 @@ section {
   max-width: 560px;
 }
 
+.section-desc a,
+.form-subtitle a { color: var(--green); font-weight: 700; }
+
 /* SERVICES */
 #services { background: var(--white); }
 
@@ -511,6 +516,8 @@ section {
   color: var(--gray);
   line-height: 1.6;
 }
+
+.step a { color: var(--green); font-weight: 700; }
 
 /* CONTACT */
 #contact { background: var(--white); }
@@ -955,6 +962,18 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .nav-links { display: none; }
+  .nav-links.is-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(14,26,20,0.98);
+    padding: 20px 5%;
+    gap: 16px;
+    z-index: 999;
+  }
   .nav-hamburger { display: flex; }
   .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
@@ -1033,9 +1052,10 @@ footer {
     <li><a href="#services">서비스</a></li>
     <li><a href="#process">진행절차</a></li>
     <li><a href="#tax-info">세금계산서</a></li>
-    <li><a href="#contact" class="nav-cta">문의하기</a></li>
+    <li><a href="#contact">문의</a></li>
+    <li><a href="quote.html" class="nav-cta">무료 견적 요청</a></li>
   </ul>
-  <button class="nav-hamburger" onclick="toggleMenu()">
+  <button class="nav-hamburger" type="button" aria-label="메뉴" aria-expanded="false" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -1059,7 +1079,7 @@ footer {
       원스톱으로 처리합니다.
     </p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">상담 및 견적 요청</a>
+      <a href="quote.html" class="btn-primary">무료 견적 요청</a>
     </div>
     <div class="hero-stats">
       <div>
@@ -1175,7 +1195,7 @@ footer {
     <div class="step fade-in">
       <div class="step-num">01</div>
       <h4>문의 &amp; 상담</h4>
-      <p>품목, 수량, 예산 등 기본 정보를 알려주세요</p>
+      <p>품목, 수량, 납기는 <a href="quote.html">무료 견적 요청</a>에 남겨 주세요</p>
     </div>
     <div class="step fade-in">
       <div class="step-num">02</div>
@@ -1247,7 +1267,7 @@ footer {
 <section id="contact">
   <p class="section-label fade-in">Contact Us</p>
   <h2 class="section-title fade-in">상담 및 견적 요청</h2>
-  <p class="section-desc fade-in">어떤 품목이든 먼저 문의하세요. 빠르고 정확하게 답변드립니다.</p>
+  <p class="section-desc fade-in">어떤 품목이든 먼저 문의하세요. 빠르고 정확하게 답변드립니다. 기계·설비 수입 견적은 <a href="quote.html">무료 견적 요청</a>으로 접수해 주세요.</p>
 
   <div class="contact-grid">
     <div class="contact-info-cards">
@@ -1286,7 +1306,7 @@ footer {
     <div class="form-wrapper fade-in">
       <div class="security-badge">SSL 보안 적용 · 개인정보 암호화 전송</div>
       <div class="form-title">상담 / 견적 요청</div>
-      <p class="form-subtitle">양식을 작성하시면 담당자가 직접 연락드립니다.</p>
+      <p class="form-subtitle">일반 상담 양식입니다. 품목·수량·납기가 있는 수입 견적은 <a href="quote.html">무료 견적 요청</a>을 이용해 주세요. 이 상담 양식은 가격을 확정하거나 결제하지 않습니다.</p>
 
       <form id="contactForm" onsubmit="submitContactForm(event)">
         <div class="form-row">
@@ -1371,6 +1391,7 @@ footer {
     <div class="footer-col">
       <h4>안내</h4>
       <ul>
+        <li><a href="quote.html">무료 견적 요청</a></li>
         <li><a href="#tax-info">세금계산서 발급</a></li>
         <li><a href="#process">진행 절차</a></li>
         <li><a href="#contact">문의하기</a></li>
@@ -1391,11 +1412,9 @@ footer {
 <script>
 function toggleMenu() {
   const links = document.querySelector('.nav-links');
-  if (links.style.display === 'flex') {
-    links.style.display = 'none';
-  } else {
-    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(14,26,20,0.98);padding:20px 5%;gap:16px;z-index:999;';
-  }
+  const open = links.classList.toggle('is-open');
+  const btn = document.querySelector('.nav-hamburger');
+  if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
 }
 
 // 문의 접수 엔드포인트 (Google Apps Script 웹앱 URL로 교체)
@@ -1450,8 +1469,9 @@ window.addEventListener('scroll', () => {
 // Smooth close hamburger on link click
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => {
-    const links = document.querySelector('.nav-links');
-    links.style.display = 'none';
+    document.querySelector('.nav-links').classList.remove('is-open');
+    const btn = document.querySelector('.nav-hamburger');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
   });
 });
 </script>
